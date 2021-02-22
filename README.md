@@ -17,3 +17,13 @@ docker exec -it dbmongo bash
 Para finalizar dentro del bash solo se debe poner:
 
 mongo	
+
+En caso de no ser posible realizar la carga de la imagen de mongo en Docker, se puede abrir o crear la base de datos 
+de manera remota con MongoDB Atlas de la siguiente manera:
+
+1. Para poder acceder a la base de datos de manera remota dentro del codigo de la aplicación dirijase a la carpeta repository.
+2. Abra el archivo MongoDBRepository.cs y en la linea 19 reemplace el codigo con lo siguiente:
+
+            var client = new MongoClient("mongodb+srv://user:user@cluster0.ipwxf.mongodb.net/Tickets?retryWrites=true&w=majority");
+
+Así tendrá acceso a la base de datos remota.
